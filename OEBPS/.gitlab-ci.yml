@@ -1,0 +1,24 @@
+image: archlinux:latest
+
+before_script:
+  - echo "Install zip dependency and update system"
+  - pacman -Syu zip --noconfirm --needed
+
+epub:
+  stage: build
+  script:
+    - bash ./scripts/pack-all.sh CI
+  artifacts:
+    paths:
+      #- Omniscient Reader's Viewpoint - Sing-shong (singsyong)-clean.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong).epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-Illustrated.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol1.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol2.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol3.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol4.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol5.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol6.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol7.epub
+      - Omniscient Reader's Viewpoint - Sing-shong (singsyong)-NaverVol8.epub
+    expire_in: 1 day
